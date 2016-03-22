@@ -1,0 +1,14 @@
+{
+	"irods": {
+		"host": "localhost",
+		"port": 1247,
+		"user": "irods",
+		"passwd": "irods",
+		"zone": "tempZone",
+		"collection": "/tempZone/home/irods"
+	},
+	"figshare": {
+		"access_token": "6c5e3a8beb74a4e817f8994525d3af60e3ac2e21cbd70a54eabdcf9e925d9672d7a31364cf7233a957",
+		"api_endpoint": "https://api.figshare.com/v2"
+	}
+}
