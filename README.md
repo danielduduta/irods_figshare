@@ -4,7 +4,7 @@ playground for irods figshare integration.
 `irods_to_figshare.py` script is a PoC for copying files from iRODS to figshare via the figshare API.
 
 ## Figshare access token
-Create a figshare account, login and then access the Apllications section. There you can generate a Personal Access token that can be used to access the figshare API.
+Create a figshare account, login and then access the Aplications section. There you can generate a Personal Access token that can be used to access the figshare API.
 
 ## Required configuration
 Check out `irods_figshare.conf.json` for some sample values.
