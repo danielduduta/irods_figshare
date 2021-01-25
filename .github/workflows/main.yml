@@ -1,0 +1,14 @@
+name: Upload to figshare.com
+on: push
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: figshare/github-upload-action@v1.0
+        with:
+          FIGSHARE_TOKEN: "6a68f91a3ffa7e09f20c4e0811df15af19768620a44b2c285d9b3a18755d8f1314658079a9078ba878a607fb0d9f5245d5cfa26ab384a19a35a789691ce43578"
+          FIGSHARE_ENDPOINT: "https://api.figsh.com/v2"
+          FIGSHARE_ARTICLE_ID: 6991730
+          DATA_DIR: "data"
