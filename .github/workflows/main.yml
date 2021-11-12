@@ -1,11 +1,21 @@
 name: Upload to Figshare
-on: [push]
+on:
+  release:
+    types: [publised]
 jobs:
   upload:
     runs-on: ubuntu-latest
+    env:
+      ARCHIVE_NAME: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
     steps:
-      - uses: actions/checkout@master
-      - uses: figshare/github-upload-action@v1.1
+      - name: prepare-data-folder
+        run : mkdir 'data'
+      - name: download-archive
+        run: curl -sL "${{ github.event.release.tarball_url }}" > "$ARCHIVE_NAME".tar.gz
+      - name: move-archive
+        run: mv "$ARCHIVE_NAME".tar.gz data/
+      - name: upload-to-figshare
+        uses: figshare/github-upload-action@v1.1
         with:
           FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
           FIGSHARE_ENDPOINT: 'https://api.figsh.com/v2'
